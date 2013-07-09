@@ -21,7 +21,7 @@
   ci = commit -v           # 差分を表示
   cam = commit -a --amend  # 直前のcommitを修正
   pa = push --all  # 全部push
-  pdr = push --dry-run  # 全部push
+  pdr = push --dry-run  # プッシュのテスト
   co = checkout
   mg = merge
  # logをtree表示
@@ -40,4 +40,4 @@
   d5 = diff HEAD~~~~~        # HEADから5つ前とdiff
   d10 = diff HEAD~~~~~~~~~~  # HEADから10前とdiff
 [merge]
-	ff = false
+	ff = true
