@@ -15,6 +15,7 @@ set laststatus=2
 "set textwidth=78
 set showcmd
 set title
+set cursorline
 
 " Editing
 set autoindent
@@ -155,10 +156,28 @@ set nocompatible               " be iMproved
 filetype off
 
 
+"--------------------------------------------------------------------------
+" neobundle
+set nocompatible               " Be iMproved
+filetype off                   " Required!
+
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+filetype plugin indent on     " Required!
+
+" Installation check.
+if neobundle#exists_not_installed_bundles()
+  echomsg 'Not installed bundles : ' .
+        \ string(neobundle#get_not_installed_bundle_names())
+  echomsg 'Please execute ":NeoBundleInstall" command.'
+  "finish
+endif
+
+
 " originalrepos on github
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
@@ -169,13 +188,19 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle '5t111111/neat-json.vim'
 
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'kien/ctrlp.vim'
 ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+
+nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;'
+vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>
 
 filetype plugin indent on     " required!
 filetype indent on
 syntax on
 "vi上から、:NeoBundleInstallで.vimrcのNeoBundleで指定されているリポジトリのプラグインをインストールできる。
 "プラグインを削除したい場合は、vimrc上からNeoBundleの記述を消して:NeoBundleCleanでできる。
+
+"call pathogen#infect()
