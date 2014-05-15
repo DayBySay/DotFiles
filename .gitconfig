@@ -49,3 +49,9 @@
 	trustExitCode = false
 [init]
 	templatedir = ~/git_template
+[core]
+	editor = /usr/bin/vim
+    filemode = false
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
