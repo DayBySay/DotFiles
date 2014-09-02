@@ -180,19 +180,37 @@ endif
 
 " originalrepos on github
 NeoBundle 'Shougo/neobundle.vim'
+" 
 NeoBundle 'Shougo/vimproc'
+" 
 NeoBundle 'VimClojure'
+" execute shell script for vim
 NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle '5t111111/neat-json.vim'
-
-NeoBundle 'scrooloose/nerdtree'
+" multiple function selector
 NeoBundle 'kien/ctrlp.vim'
-""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+NeoBundle 'Shougo/unite.vim'
+" auto complete
+NeoBundle 'Shougo/neocomplcache'
+" orig snippet
+" NeoBundle 'Shougo/neosnippet'
+" ?
+NeoBundle 'jpalardy/vim-slime'
+" check syntacs auto
+NeoBundle 'scrooloose/syntastic'
+" JSON syntax editer
+"NeoBundle '5t111111/neat-json.vim'
+" git command interface for vim 
+NeoBundle 'tpope/vim-fugitive'
+" Show dir list
+NeoBundle 'scrooloose/nerdtree'
+" Auto close 
+NeoBundle 'Townk/vim-autoclose'
+" run script on vim
+NeoBundle 'thinca/vim-quickrun'
+" grep benri
+NeoBundle 'grep.vim'
+" kawaii
+NeoBundle 'drillbits/nyan-modoki.vim'
 
 nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;'
 vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>
@@ -200,7 +218,7 @@ vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>
 filetype plugin indent on     " required!
 filetype indent on
 syntax on
-"vi上から、:NeoBundleInstallで.vimrcのNeoBundleで指定されているリポジトリのプラグインをインストールできる。
-"プラグインを削除したい場合は、vimrc上からNeoBundleの記述を消して:NeoBundleCleanでできる。
+" vi上から、:NeoBundleInstallで.vimrcのNeoBundleで指定されているリポジトリのプラグインをインストールできる。
+" プラグインを削除したい場合は、vimrc上からNeoBundleの記述を消して:NeoBundleCleanでできる。
 
 "call pathogen#infect()
