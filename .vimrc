@@ -25,7 +25,10 @@ set backspace=indent,eol,start
 set matchpairs+=<:>
 
 " Status line
- set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %F%m%r%h%w[%{&ff}]%=%{g:NyanModoki()}(%l,%c)[%P]
+
+let g:nyan_modoki_select_cat_face_number = 2
+let g:nayn_modoki_animation_enabled= 1
 
 " Others
 set nobackup
