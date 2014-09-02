@@ -33,3 +33,14 @@ bind n screen
 bind h prev
 bind j next
 bind l windowlist
+
+#resize
+bind r eval 'command -c resize'
+bind ^r eval 'command -c resize'
+bind + eval 'command -c resize'
+bind - eval 'command -c resize'
+bind -c resize + eval 'resize +1' 'command -c resize'
+bind -c resize - eval 'resize -1' 'command -c resize'
+
+#log
+termcapinfo xterm* ti@:te@
