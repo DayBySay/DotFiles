@@ -25,7 +25,7 @@ set backspace=indent,eol,start
 set matchpairs+=<:>
 
 " Status line
- set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
+ set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 " Others
 set nobackup
@@ -214,6 +214,8 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'grep.vim'
 " kawaii
 NeoBundle 'drillbits/nyan-modoki.vim'
+
+NeoBundleCheck
 
 nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;'
 vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>
