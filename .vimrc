@@ -173,8 +173,6 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-filetype plugin indent on     " Required!
-
 " Installation check.
 if neobundle#exists_not_installed_bundles()
   echomsg 'Not installed bundles : ' .
@@ -194,11 +192,8 @@ NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
 " multiple function selector
 NeoBundle 'kien/ctrlp.vim'
+"
 NeoBundle 'Shougo/unite.vim'
-" auto complete
-NeoBundle 'Shougo/neocomplcache'
-" orig snippet
-" NeoBundle 'Shougo/neosnippet'
 " ?
 NeoBundle 'jpalardy/vim-slime'
 " check syntacs auto
@@ -217,6 +212,29 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'grep.vim'
 " kawaii
 NeoBundle 'drillbits/nyan-modoki.vim'
+" auto complete
+function! s:meet_neocomplete_requirements()
+    return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
+endfunction
+
+if s:meet_neocomplete_requirements()
+    NeoBundle 'Shougo/neocomplete.vim'
+    NeoBundleFetch 'Shougo/neocomplcache.vim'
+else
+    NeoBundleFetch 'Shougo/neocomplete.vim'
+    NeoBundle 'Shougo/neocomplcache.vim'
+endif
+
+
+if s:meet_neocomplete_requirements()
+    " 新しく追加した neocomplete の設定
+else
+    " 今までの neocomplcache の設定
+endif
+
+" Required:
+ filetype plugin indent on
+
 
 NeoBundleCheck
 
