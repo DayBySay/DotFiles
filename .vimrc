@@ -217,6 +217,13 @@ function! ExecuteNERDTree()
 endfunction
 noremap <c-e> :<c-u>:call ExecuteNERDTree()<cr>
 
+
+"--------------------------------------------------------------------------
+" syntastic
+"--------------------------------------------------------------------------
+let g:syntastic_python_checkers = ["flake8"]
+
+
 "--------------------------------------------------------------------------
 " neobundle
 "--------------------------------------------------------------------------
@@ -271,6 +278,8 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'grep.vim'
 " kawaii
 NeoBundle 'drillbits/nyan-modoki.vim'
+" flake8
+NeoBundle 'nvie/vim-flake8'
 " auto complete
 function! s:meet_neocomplete_requirements()
     return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
