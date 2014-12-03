@@ -1,3 +1,6 @@
+set encoding=utf-8
+scriptencoding utf-8
+
 au! BufNewFile,BufRead *.tpl setf html
 au! BufRead,BufNewFile *.tpl setf smarty
 au! BufNewFile,BufRead *.ini setf php
@@ -5,8 +8,6 @@ au! BufNewFile,BufRead *.diag setf diag
 
 autocmd filetype php :set makeprg=php\ -l\ %
 autocmd filetype php :set errorformat=%m\ in\ %f\ on\ line\ %l
-
-syntax on
 
 " Display
 set number
@@ -65,52 +66,6 @@ highlight Search ctermbg=4
 " quit
 inoremap <C-q> <Esc>:q<CR>
 nnoremap <C-q> :q<CR>
-
-"--------------------------------------------------------------------------
-" 文字コードの自動認識
-"--------------------------------------------------------------------------
-set encoding=utf-8
-"if &encoding !=# 'utf-8'
-"    set encoding=japan
-"    set fileencoding=japan
-"endif
-"
-"if has('iconv')
-"    let s:enc_euc = 'euc-jp'
-"    let s:enc_jis = 'iso-2022-jp'
-"    " iconvがeucJP-msに対応しているかをチェック
-"    if iconv("\x87\x64\x87\x6a", 'cp932', 'eucjp-ms') ==# "\xad\xc5\xad\xcb"
-"        let s:enc_euc = 'eucjp-ms'
-"        let s:enc_jis = 'iso-2022-jp-3'
-"        " iconvがJISX0213に対応しているかをチェック
-"    elseif iconv("\x87\x64\x87\x6a", 'cp932', 'euc-jisx0213') ==# "\xad\xc5\xad\xcb"
-"        let s:enc_euc = 'euc-jisx0213'
-"        let s:enc_jis = 'iso-2022-jp-3'
-"    endif
-"    " fileencodingsを構築
-"    if &encoding ==# 'utf-8'
-"        let s:fileencodings_default = &fileencodings
-"        let &fileencodings = s:enc_jis .','. s:enc_euc .',cp932'
-"        let &fileencodings = &fileencodings .','. s:fileencodings_default
-"        unlet s:fileencodings_default
-"    else
-"        let &fileencodings = &fileencodings .','. s:enc_jis
-"        set fileencodings+=utf-8,ucs-2le,ucs-2
-"        if &encoding =~# '^\(euc-jp\|euc-jisx0213\|eucjp-ms\)$'
-"            set fileencodings+=cp932
-"            set fileencodings-=euc-jp
-"            set fileencodings-=euc-jisx0213
-"            set fileencodings-=eucjp-ms
-"            let &encoding = s:enc_euc
-"            let &fileencoding = s:enc_euc
-"        else
-"            let &fileencodings = &fileencodings .','. s:enc_euc
-"        endif
-"    endif
-"    " 定数を処分
-"    unlet s:enc_euc
-"    unlet s:enc_jis
-"endif
 
 " 日本語を含まない場合は fileencoding に encoding を使うようにする
 if has('autocmd')
@@ -254,6 +209,7 @@ if neobundle#exists_not_installed_bundles()
     "finish
 endif
 
+syntax on
 
 " originalrepos on github
 NeoBundle 'Shougo/neobundle.vim'
@@ -290,6 +246,11 @@ NeoBundle 'grep.vim'
 NeoBundle 'drillbits/nyan-modoki.vim'
 " flake8
 NeoBundle 'nvie/vim-flake8'
+
+" accept filetype json
+NeoBundle 'JSON.vim'
+au! BufRead,BufNewFile *.json set filetype=json
+
 " auto complete
 function! s:meet_neocomplete_requirements()
     return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
@@ -380,7 +341,6 @@ vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>
 
 filetype plugin indent on     " required!
 filetype indent on
-syntax on
 " vi上から、:NeoBundleInstallで.vimrcのNeoBundleで指定されているリポジトリのプラグインをインストールできる。
 " プラグインを削除したい場合は、vimrc上からNeoBundleの記述を消して:NeoBundleCleanでできる。
 
