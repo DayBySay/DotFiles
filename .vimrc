@@ -192,6 +192,7 @@ let g:syntastic_python_checkers = ["flake8"]
 "--------------------------------------------------------------------------
 " neobundle
 "--------------------------------------------------------------------------
+if 1
 set nocompatible               " Be iMproved
 filetype off                   " Required!
 
@@ -335,6 +336,7 @@ filetype plugin indent on
 
 
 NeoBundleCheck
+endif
 
 nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;'
 vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>
