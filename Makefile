@@ -13,7 +13,8 @@ vim: $(foreach f, $(filter .vim%, $(DOT_FILES)), link-dot-file-$(f))
 git: $(foreach f, $(filter .gitconfig%, $(DOT_FILES)), link-dot-file-$(f)) setup-git
 
 setup-git: git-prompt.sh git-completion.bash
-	@echo "completionとprompt設定を追加していなければ追加\necho \"#git-completion\\ \nsource ~/DotFiles/git-prompt.sh\\ \nsource ~/DotFiles/git-completion.bash\\ \nGIT_PS1_SHOWDIRTYSTATE=true\\ \nGIT_PS1_SHOWSTASHSTATE=true\\ \nGIT_PS1_SHOWUNTRACKEDFILES=true\\ \nGIT_PS1_SHOWUPSTREAM=auto\"\\ \n >> ~/.bashrc"
+	@echo "下記のgit周りの処理を手動で追加"
+	cat .bashrc.base
 
 git-prompt.sh:
 	wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
