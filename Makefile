@@ -22,6 +22,12 @@ git-prompt.sh:
 git-completion.bash:
 	wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 
+brew:
+	ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+	brew tap caskroom/cask
+	brew install caskroom/cask/brew-cask
+	brew tap Homebrew/brewdler
+
 .PHONY: clean
 clean: $(foreach f, $(DOT_FILES), unlink-dot-file-$(f))
   
