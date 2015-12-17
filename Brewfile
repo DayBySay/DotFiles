@@ -1,5 +1,4 @@
 tap 'caskroom/cask'
-tap 'homebrew/boneyard'
 tap 'homebrew/brewdler'
 tap 'homebrew/bundle'
 brew 'libyaml'
@@ -15,5 +14,3 @@ brew 'sqlite'
 brew 'python3'
 brew 'vim', args: ['override-system-vi', 'with-lua', 'with-python3']
 brew 'wget'
-cask '==> We need to make Caskroom for the first time at /opt/homebrew-cask/Caskroom'
-cask '==> We'll set permissions properly so we won't need sudo in the future'
