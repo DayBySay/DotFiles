@@ -1,4 +1,10 @@
 alias ll="ls -la"
+alias diff="diff -u"
+
+export GREP_OPTIONS='--color=auto'
+
+# User specific aliases and functions
+stty -ixon -ixoff
 
 #git-completion
 source ~/DotFiles/git-prompt.sh
