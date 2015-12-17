@@ -47,14 +47,9 @@
 	path = /Applications/p4merge.app/Contents/MacOS/p4merge
 	keepTemporaries = false
 	trustExitCode = false
-[init]
-	templatedir = ~/git_template
 [core]
-	editor = /usr/bin/vim
+	editor = vim -c \"set fenc=utf-8\"
     filemode = false
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
-[merge "mergepbx"]
-      name = XCode project files merger
-        driver = mergepbx %O %A %B
