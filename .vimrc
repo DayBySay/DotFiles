@@ -270,6 +270,9 @@ NeoBundle 'tpope/vim-fugitive'
 " check syntacs auto
 NeoBundle 'scrooloose/syntastic'
 
+" comment
+NeoBundle 'tomtom/tcomment_vim'
+
 " end plugins
 call neobundle#end()
 
