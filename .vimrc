@@ -53,21 +53,6 @@ if exists('&ambiwidth')
     set ambiwidth=double
 endif
 
-" 横分割をするようにする
-let g:quickrun_config={'*': {'split': ''}}
-
-" 横分割時は下へ､ 縦分割時は右へ新しいウィンドウが開くようにする
-set splitbelow
-set splitright
-
-" blockdiag
-let g:quickrun_config['diag'] = {
-            \'command': 'blockdiag',
-            \'exec': ['%c -a %s -o %{expand("%:r")}.png', 'open -g  %{expand("%:r")}.png'],
-            \'outputter':'message',
-            \}
-
-
 " plugins
 "" NeoBundle
 if has('vim_starting')
@@ -215,7 +200,7 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 
 " 自分用 snippet ファイルの場所
 let s:my_snippet = '~/DotFiles/snippets/'
-let g:neosnippet#snippets_directory = s:my_snippet
+let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets/'
 
 " execute shell script for vim
 NeoBundle 'Shougo/vimshell'
@@ -272,6 +257,22 @@ NeoBundle 'scrooloose/syntastic'
 
 " comment
 NeoBundle 'tomtom/tcomment_vim'
+
+" スクリプトを実行
+NeoBundle 'thinca/vim-quickrun'
+" 横分割をするようにする
+let g:quickrun_config = {}
+let g:quickrun_config._ = {
+\       "runner" : "vimproc",
+\       "runner/vimproc/updatetime" : 10,
+\}
+
+" quickrun.vim が実行していない場合には <C-c> を呼び出す
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>""
+
+" 横分割時は下へ､ 縦分割時は右へ新しいウィンドウが開くようにする
+set splitbelow
+set splitright
 
 " end plugins
 call neobundle#end()
