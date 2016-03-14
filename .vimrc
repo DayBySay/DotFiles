@@ -53,6 +53,9 @@ if exists('&ambiwidth')
     set ambiwidth=double
 endif
 
+" vimの補完機能設定
+set completeopt=menuone,preview
+
 " plugins
 "" NeoBundle
 if has('vim_starting')
