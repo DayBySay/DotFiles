@@ -5,7 +5,7 @@ all: scr git vim zsh
 help:
 	cat Makefile
 
-zsh: $(foreach f, $(filter .screenrc%, $(DOT_FILES)), link-dot-file-$(f))
+zsh: $(foreach f, $(filter .zshrc%, $(DOT_FILES)), link-dot-file-$(f))
 
 scr: $(foreach f, $(filter .screenrc%, $(DOT_FILES)), link-dot-file-$(f))
 
