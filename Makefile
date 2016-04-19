@@ -1,4 +1,4 @@
-DOT_FILES = .screenrc .vimrc .gitconfig
+DOT_FILES = .screenrc .vimrc .gitconfig .tmux.conf
 
 all: scr git vim
 
@@ -6,6 +6,8 @@ help:
 	cat Makefile
 
 scr: $(foreach f, $(filter .screenrc%, $(DOT_FILES)), link-dot-file-$(f))
+
+tmx: $(foreach f, $(filter .tmux.conf%, $(DOT_FILES)), link-dot-file-$(f))
 
 vim: $(foreach f, $(filter .vim%, $(DOT_FILES)), link-dot-file-$(f))
 	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
