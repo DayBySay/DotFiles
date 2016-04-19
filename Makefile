@@ -1,9 +1,11 @@
-DOT_FILES = .screenrc .vimrc .gitconfig .tmux.conf
+DOT_FILES = .screenrc .vimrc .gitconfig .tmux.conf .zshrc
 
-all: scr git vim
+all: scr git vim zsh
 
 help:
 	cat Makefile
+
+zsh: $(foreach f, $(filter .screenrc%, $(DOT_FILES)), link-dot-file-$(f))
 
 scr: $(foreach f, $(filter .screenrc%, $(DOT_FILES)), link-dot-file-$(f))
 
