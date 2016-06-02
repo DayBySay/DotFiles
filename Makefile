@@ -1,9 +1,11 @@
-DOT_FILES = .screenrc .vimrc .gitconfig .tmux.conf
+DOT_FILES = .screenrc .vimrc .gitconfig .gitignore_global .tmux.conf .zshrc
 
-all: scr git vim
+all: scr git vim zsh
 
 help:
 	cat Makefile
+
+zsh: $(foreach f, $(filter .zshrc%, $(DOT_FILES)), link-dot-file-$(f))
 
 scr: $(foreach f, $(filter .screenrc%, $(DOT_FILES)), link-dot-file-$(f))
 
@@ -12,7 +14,7 @@ tmx: $(foreach f, $(filter .tmux.conf%, $(DOT_FILES)), link-dot-file-$(f))
 vim: $(foreach f, $(filter .vim%, $(DOT_FILES)), link-dot-file-$(f))
 	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
-git: $(foreach f, $(filter .gitconfig%, $(DOT_FILES)), link-dot-file-$(f)) setup-git
+git: $(foreach f, $(filter .git%, $(DOT_FILES)), link-dot-file-$(f)) setup-git
 
 setup-git: git-prompt.sh git-completion.bash
 	@echo "下記のgit周りの処理を手動で追加"

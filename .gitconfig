@@ -40,7 +40,7 @@
     d5 = diff HEAD~~~~~        # HEADから5つ前とdiff
     d10 = diff HEAD~~~~~~~~~~  # HEADから10前とdiff
     #ブランチ一括削除
-    br-da = branch --merged | grep -v '*' | xargs -I % git branch -d % #マージ済みのブランチ一括削除
+    br-da = !git  branch --merged | grep -v '*' | grep -v 'develop' | xargs -I % git branch -d % #マージ済みのブランチ一括削除
 [merge]
 	ff = true
 [mergetool "p4merge"]
@@ -50,6 +50,9 @@
 [core]
 	editor = vim -c \"set fenc=utf-8\"
     filemode = false
+    excludesfile = ~/.gitignore_global
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[url "git@github.com:"]
+    insteadOf = https://github.com/
