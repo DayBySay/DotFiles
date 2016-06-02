@@ -50,6 +50,7 @@
 [core]
 	editor = vim -c \"set fenc=utf-8\"
     filemode = false
+    excludesfile = ~/.gitignore_global
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
