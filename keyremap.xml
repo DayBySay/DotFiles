@@ -20,12 +20,6 @@
 		<only>Chrome</only>
 		<autogen>__PassThrough__</autogen>
 	</item>
-	<item>
-		<name>Disable all settings while using iTERM2</name>
-		<identifier>private.ignore_iterm2</identifier>
-		<only>iTERM2</only>
-		<autogen>__PassThrough__</autogen>
-	</item>
 
     <item>
         <name>Vim_j</name>
