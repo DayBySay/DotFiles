@@ -24,6 +24,7 @@
     <item>
         <name>Vim_j</name>
         <identifier>Vim_j</identifier>
+		<not>iTERM2</not>
         <autogen>
             __KeyToKey__
             KeyCode::J, ModifierFlag::CONTROL_L,
@@ -33,6 +34,7 @@
     <item>
         <name>Vim_k</name>
         <identifier>Vim_k</identifier>
+		<not>iTERM2</not>
         <autogen>
             __KeyToKey__
             KeyCode::K, ModifierFlag::CONTROL_L,
@@ -42,6 +44,7 @@
     <item>
         <name>Vim_l</name>
         <identifier>Vim_l</identifier>
+		<not>iTERM2</not>
         <autogen>
             __KeyToKey__
             KeyCode::L, ModifierFlag::CONTROL_L,
@@ -51,6 +54,7 @@
     <item>
         <name>Vim_o</name>
         <identifier>Vim_o</identifier>
+		<not>iTERM2</not>
         <autogen>
             __KeyToKey__
             KeyCode::O, ModifierFlag::CONTROL_L,
@@ -62,6 +66,7 @@
     <item>
         <name>Emacs_f</name>
         <identifier>Emacs_f</identifier>
+		<not>iTERM2</not>
         <autogen>
             __KeyToKey__
             KeyCode::F, ModifierFlag::CONTROL_L,
@@ -71,6 +76,7 @@
     <item>
         <name>Emacs_b</name>
         <identifier>Emacs_b</identifier>
+		<not>iTERM2</not>
         <autogen>
             __KeyToKey__
             KeyCode::B, ModifierFlag::CONTROL_L,
@@ -80,6 +86,7 @@
     <item>
         <name>Emacs_h</name>
         <identifier>Emacs_h</identifier>
+		<not>iTERM2</not>
         <autogen>
             __KeyToKey__
             KeyCode::H, ModifierFlag::CONTROL_L,
@@ -88,6 +95,7 @@
     </item>
     <item>
         <name>Emacs_d</name>
+		<not>iTERM2</not>
         <identifier>Emacs_d</identifier>
         <autogen>
             __KeyToKey__
