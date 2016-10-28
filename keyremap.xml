@@ -64,6 +64,16 @@
             KeyCode::ENTER
         </autogen>
     </item>
+
+    <item>
+        <name>Emacs_f</name>
+        <identifier>Emacs_f</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::F, ModifierFlag::CONTROL_L,
+            KeyCode::CURSOR_RIGHT
+        </autogen>
+    </item>
     <item>
         <name>Emacs_b</name>
         <identifier>Emacs_b</identifier>
@@ -92,15 +102,6 @@
         </autogen>
     </item>
 
-    <item>
-        <name>Emacs-g</name>
-        <identifier>Emacs-g</identifier>
-        <autogen>
-            __KeyToKey__
-            KeyCode::G, ModifierFlag::CONTROL_L,
-            KeyCode::ESCAPE
-        </autogen>
-    </item>
     <item>
         <name>Original_SPACE</name>
         <identifier>Original_SPACE</identifier>
