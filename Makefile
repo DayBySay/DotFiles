@@ -1,4 +1,4 @@
-DOT_FILES = .screenrc .vimrc .gitconfig .gitignore_global .tmux.conf .zshrc
+DOT_FILES = .screenrc .vimrc .gitconfig .gitignore_global .tmux.conf .zshrc keyremap.xml
 
 all: scr git vim zsh
 
@@ -13,6 +13,8 @@ tmx: $(foreach f, $(filter .tmux.conf%, $(DOT_FILES)), link-dot-file-$(f))
 
 vim: $(foreach f, $(filter .vim%, $(DOT_FILES)), link-dot-file-$(f))
 	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+
+keyremap: link-keyremap
 
 git: $(foreach f, $(filter .git%, $(DOT_FILES)), link-dot-file-$(f)) setup-git
 
@@ -43,3 +45,7 @@ link-dot-file-%: %
 unlink-dot-file-%: %
 	@echo "Remove Symlink $(HOME)/$<"
 	@$(RM) $(HOME)/$<
+
+link-keyremap:
+	echo "Create Symlink Keymap"
+	ln -snf $(CURDIR)/keyremap.xml $(HOME)/Library/Application\ Support/Karabiner/private.xml 

@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<root>
+    <appdef>
+        <appname>iTERM2</appname>
+        <equal>com.googlecode.iterm2</equal>
+    </appdef>
+    <appdef>
+        <appname>MACVIM</appname>
+        <equal>org.vim.MacVim</equal>
+    </appdef>
+    <item>
+        <name>Vim_j</name>
+        <identifier>Vim_j</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::J, ModifierFlag::CONTROL_L,
+            KeyCode::CURSOR_DOWN
+        </autogen>
+    </item>
+    <item>
+        <name>Vim_k</name>
+        <identifier>Vim_k</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::K, ModifierFlag::CONTROL_L,
+            KeyCode::CURSOR_UP
+        </autogen>
+    </item>
+    <item>
+        <name>Vim_l</name>
+        <identifier>Vim_l</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::L, ModifierFlag::CONTROL_L,
+            KeyCode::CURSOR_RIGHT
+        </autogen>
+    </item>
+    <item>
+        <name>Vim_o</name>
+        <identifier>Vim_o</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::O, ModifierFlag::CONTROL_L,
+            KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+            KeyCode::ENTER
+        </autogen>
+    </item>
+    <item>
+        <name>Emacs_b</name>
+        <identifier>Emacs_b</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::B, ModifierFlag::CONTROL_L,
+            KeyCode::CURSOR_LEFT
+        </autogen>
+    </item>
+    <item>
+        <name>Emacs_h</name>
+        <identifier>Emacs_h</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::H, ModifierFlag::CONTROL_L,
+            KeyCode::DELETE
+        </autogen>
+    </item>
+    <item>
+        <name>Emacs_d</name>
+        <identifier>Emacs_d</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::D, ModifierFlag::CONTROL_L,
+            KeyCode::FORWARD_DELETE 
+        </autogen>
+    </item>
+
+	<!--
+    <item>
+        <name>Emacs_e</name>
+        <identifier>Emacs_e</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::E, ModifierFlag::CONTROL_L,
+            KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L 
+        </autogen>
+    </item>
+    <item>
+        <name>Emacs_a</name>
+        <identifier>Emacs_a</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::A, ModifierFlag::CONTROL_L,
+            KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L 
+        </autogen>
+	</item>
+	-->
+
+    <item>
+        <name>Emacs-g</name>
+        <identifier>Emacs-g</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::G, ModifierFlag::CONTROL_L,
+            KeyCode::ESCAPE
+        </autogen>
+    </item>
+    <item>
+        <name>Original_i</name>
+        <identifier>Original_i</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::I, ModifierFlag::CONTROL_L,
+            KeyCode::ENTER
+        </autogen>
+    </item>
+    <item>
+        <name>Original_u</name>
+        <identifier>Original_u</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::U, ModifierFlag::CONTROL_L,
+            KeyCode::ENTER, ModifierFlag::COMMAND_L
+        </autogen>
+    </item>
+	<!--
+    <item>
+        <name>Emmet</name>
+        <identifier>Emmet</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::E, ModifierFlag::COMMAND_L,
+			KeyCode::T, ModifierFlag::CONTROL_L
+		</autogen>
+    </item>
+	-->
+	<item>
+        <name>Slack_down</name>
+        <identifier>Slack_down</identifier>
+		<autogen>
+            __KeyToKey__
+            KeyCode::J, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+            KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L,
+        </autogen>
+    </item>
+	<item>
+        <name>Slack_up</name>
+        <identifier>Slack_up</identifier>
+		<autogen>
+            __KeyToKey__
+            KeyCode::K, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+            KeyCode::CURSOR_UP, ModifierFlag::OPTION_L,
+        </autogen>
+    </item>
+	<item>
+        <name>Slack_down_unread</name>
+        <identifier>Slack_down_unread</identifier>
+		<autogen>
+            __KeyToKey__
+            KeyCode::N, ModifierFlag::OPTION_L,
+            KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+        </autogen>
+    </item>
+	<item>
+        <name>Slack_up_unread</name>
+        <identifier>Slack_up_unread</identifier>
+		<autogen>
+            __KeyToKey__
+            KeyCode::P, ModifierFlag::OPTION_L,
+            KeyCode::CURSOR_UP, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+        </autogen>
+    </item>
+	<item>
+         <name>Excel F2</name>
+         <identifier>private.app_excel_f2</identifier>
+         <only>EXCEL</only>
+            KeyCode::N, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+         <autogen>--KeyToKey-- KeyCode::F2, KeyCode::U, ModifierFlag::CONTROL_L</autogen>
+    </item>
+
+	<item>
+        <name>Original_x</name>
+        <identifier>Original_x</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::X, ModifierFlag::CONTROL_L,
+            KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+            KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+			<!--
+            KeyCode::DELETE,
+            KeyCode::FORWARD_DELETE
+			-->
+
+        </autogen>
+    </item>
+	<item>
+        <name>C-[_Esc</name>
+        <identifier>C-[_Esc</identifier>
+        <autogen>
+            __KeyToKey__
+  	        KeyCode::BRACKET_RIGHT, ModifierFlag::CONTROL_L,
+            KeyCode::ESCAPE
+        </autogen>
+    </item>
+	<item>
+        <name>ShowDesktop</name>
+        <identifier>ShowDesktop</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::D, ModifierFlag::OPTION_L,
+            KeyCode::F11
+        </autogen>
+    </item>
+
+	<!-- main light = 4 -->
+	<vkopenurldef>
+		<name>KeyCode::VK_OPEN_URL_SHELL_light_off</name>
+		<url type="shell">sh ~/Dropbox/setting_files/irkit/light_off.sh</url>
+	</vkopeurlshell>
+	<item>
+        <name>Light_Off</name>
+        <identifier>Light_Off</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::KEY_4, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+            KeyCode::VK_OPEN_URL_SHELL_light_off
+        </autogen>
+    </item>
+	<vkopenurldef>
+		<name>KeyCode::VK_OPEN_URL_SHELL_light_on</name>
+		<url type="shell">sh ~/Dropbox/setting_files/irkit/light_on.sh</url>
+	</vkopeurlshell>
+	<item>
+        <name>Light_On</name>
+        <identifier>Light_On</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::KEY_4, ModifierFlag::CONTROL_L,
+            KeyCode::VK_OPEN_URL_SHELL_light_on
+        </autogen>
+    </item>
+
+	<!-- pendant light = 5 -->
+	<vkopenurldef>
+		<name>KeyCode::VK_OPEN_URL_SHELL_pendant_off</name>
+		<url type="shell">sh ~/Dropbox/setting_files/irkit/pendant_off.sh</url>
+	</vkopeurlshell>
+	<item>
+        <name>Pendant_Off</name>
+        <identifier>Pendant_Off</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::KEY_5, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+            KeyCode::VK_OPEN_URL_SHELL_pendant_off
+        </autogen>
+    </item>
+	<vkopenurldef>
+		<name>KeyCode::VK_OPEN_URL_SHELL_pendant_on</name>
+		<url type="shell">sh ~/Dropbox/setting_files/irkit/pendant_on.sh</url>
+	</vkopeurlshell>
+	<item>
+        <name>Pendant_On</name>
+        <identifier>Pendant_On</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::KEY_5, ModifierFlag::CONTROL_L,
+            KeyCode::VK_OPEN_URL_SHELL_pendant_on
+        </autogen>
+    </item>
+
+	<!-- aircon = 6 -->
+	<vkopenurldef>
+		<name>KeyCode::VK_OPEN_URL_SHELL_aircon_off</name>
+		<url type="shell">sh ~/Dropbox/setting_files/irkit/aircon_off.sh</url>
+	</vkopeurlshell>
+	<item>
+        <name>Aircon_Off</name>
+        <identifier>Aircon_Off</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::KEY_6, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+            KeyCode::VK_OPEN_URL_SHELL_aircon_off
+        </autogen>
+    </item>
+	<vkopenurldef>
+		<name>KeyCode::VK_OPEN_URL_SHELL_aircon_on</name>
+		<url type="shell">sh ~/Dropbox/setting_files/irkit/aircon_on.sh</url>
+	</vkopeurlshell>
+	<item>
+        <name>Aircon_On</name>
+        <identifier>Aircon_On</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::KEY_6, ModifierFlag::CONTROL_L,
+            KeyCode::VK_OPEN_URL_SHELL_aircon_on
+        </autogen>
+    </item>
+	<vkopenurldef>
+		<name>KeyCode::VK_OPEN_URL_SHELL_all_off</name>
+		<url type="shell">sh ~/Dropbox/setting_files/irkit/all_off.sh</url>
+	</vkopeurlshell>
+	<item>
+        <name>All_Off</name>
+        <identifier>All_Off</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::KEY_0, ModifierFlag::CONTROL_L,
+            KeyCode::VK_OPEN_URL_SHELL_all_off
+        </autogen>
+    </item>
+	
+	<item>
+        <name>Music_play</name>
+        <identifier>Music_play</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::KEY_3, ModifierFlag::CONTROL_L,
+            KeyCode::VK_CONSUMERKEY_MUSIC_PLAY 
+        </autogen>
+    </item>
+    <item>
+        <name>Leave Insert Mode with EISUU (vim keybind apps)</name>
+        <identifier>private.vim_keybind_apps_esc_with_eisuu</identifier>
+        <only>iTERM2,TERMINAL,MACVIM</only>
+        <autogen>--KeyToKey-- KeyCode::ESCAPE, KeyCode::ESCAPE, KeyCode::JIS_EISUU</autogen>
+        <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, VK_CONTROL, KeyCode::ESCAPE, KeyCode::JIS_EISUU</autogen>
+        <autogen>--KeyToKey-- KeyCode::SPACE, ModifierFlag::CONTROL_L, KeyCode::ESCAPE, KeyCode::JIS_EISUU</autogen>
+    </item>
+
+    <include once="true" path="./mouse_keys.xml" />
+</root>
+
