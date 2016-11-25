@@ -12,6 +12,11 @@
         <appname>Chrome</appname>
         <equal>com.google.Chrome</equal>
     </appdef>
+    <appdef>
+        <appname>Slack</appname>
+        <equal>com.tinyspecks.slackmacapp</equal>
+    </appdef>
+
 
 	<!-- ignored settings -->
 	<item>
@@ -24,7 +29,7 @@
     <item>
         <name>Vim_j</name>
         <identifier>Vim_j</identifier>
-		<not>iTERM2</not>
+		<not>iTERM2, Slack</not>
         <autogen>
             __KeyToKey__
             KeyCode::J, ModifierFlag::CONTROL_L,
@@ -34,7 +39,7 @@
     <item>
         <name>Vim_k</name>
         <identifier>Vim_k</identifier>
-		<not>iTERM2</not>
+		<not>iTERM2, Slack</not>
         <autogen>
             __KeyToKey__
             KeyCode::K, ModifierFlag::CONTROL_L,
@@ -105,11 +110,11 @@
     </item>
 
     <item>
-        <name>Original_SPACE</name>
-        <identifier>Original_SPACE</identifier>
+        <name>Original_M</name>
+        <identifier>Original_M</identifier>
         <autogen>
             __KeyToKey__
-            KeyCode::SPACE, ModifierFlag::CONTROL_L,
+            KeyCode::M, ModifierFlag::CONTROL_L,
             KeyCode::ENTER
         </autogen>
     </item>
@@ -117,6 +122,7 @@
 	<item>
         <name>Slack_down_unread</name>
         <identifier>Slack_down_unread</identifier>
+		<only>Slack</only>
 		<autogen>
             __KeyToKey__
             KeyCode::N, ModifierFlag::OPTION_L,
@@ -126,6 +132,7 @@
 	<item>
         <name>Slack_up_unread</name>
         <identifier>Slack_up_unread</identifier>
+		<only>Slack</only>
 		<autogen>
             __KeyToKey__
             KeyCode::P, ModifierFlag::OPTION_L,
@@ -133,30 +140,6 @@
         </autogen>
     </item>
 
-	<item>
-        <name>Original_x</name>
-        <identifier>Original_x</identifier>
-        <autogen>
-            __KeyToKey__
-            KeyCode::X, ModifierFlag::CONTROL_L,
-            KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
-            KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
-			<!--
-            KeyCode::DELETE,
-            KeyCode::FORWARD_DELETE
-			-->
-
-        </autogen>
-    </item>
-	<item>
-        <name>C-[_Esc</name>
-        <identifier>C-[_Esc</identifier>
-        <autogen>
-            __KeyToKey__
-  	        KeyCode::BRACKET_RIGHT, ModifierFlag::CONTROL_L,
-            KeyCode::ESCAPE
-        </autogen>
-    </item>
 	<item>
         <name>ShowDesktop</name>
         <identifier>ShowDesktop</identifier>
@@ -172,8 +155,7 @@
         <identifier>private.vim_keybind_apps_esc_with_eisuu</identifier>
         <only>iTERM2,TERMINAL,MACVIM</only>
         <autogen>--KeyToKey-- KeyCode::ESCAPE, KeyCode::ESCAPE, KeyCode::JIS_EISUU</autogen>
-        <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, VK_CONTROL, KeyCode::ESCAPE, KeyCode::JIS_EISUU</autogen>
-        <autogen>--KeyToKey-- KeyCode::SPACE, ModifierFlag::CONTROL_L, KeyCode::ESCAPE, KeyCode::JIS_EISUU</autogen>
+        <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::CONTROL_L, KeyCode::ESCAPE, KeyCode::JIS_EISUU</autogen>
     </item>
 
     <include once="true" path="./mouse_keys.xml" />
