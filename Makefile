@@ -51,4 +51,4 @@ link-keyremap:
 	ln -snf $(CURDIR)/keyremap.xml $(HOME)/Library/Application\ Support/Karabiner/private.xml 
 
 test:
-	git add . ; git commit -m "a" ; git push origin karabiner
+	git add . && git commit -m "a" && git push origin karabiner
