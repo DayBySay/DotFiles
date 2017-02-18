@@ -267,7 +267,7 @@ let g:quickrun_config._={ 'runner':'vimproc',
 \ }
 
 " quickrunの実行を \r から r に変更
-silent! nmap <unique>q <Plug>(quickrun)
+silent! nmap <unique>_ <Plug>(quickrun)
 
 " quickrun.vim が実行していない場合には <C-c> を呼び出す
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>""
