@@ -290,6 +290,10 @@ NeoBundleLazy 'OrangeT/vim-csharp', {'autoload': {'filetipes': ['cs', 'csi', 'cs
 
 NeoBundle 'tpope/vim-dispatch'
 
+" React
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
+
 " end plugins
 call neobundle#end()
 
