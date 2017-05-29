@@ -45,6 +45,17 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 inoremap <C-q> <Esc>:q<CR>
 nnoremap <C-q> :q<CR>
 
+" vimgrep
+nnoremap [q :cprevious<CR>   " 前へ
+nnoremap ]q :cnext<CR>       " 次へ
+nnoremap [Q :<C-u>cfirst<CR> " 最初へ
+nnoremap ]Q :<C-u>clast<CR>  " 最後へ
+set grepprg=grep\ -rnIH\ --exclude-dir=.svn\ --exclude-dir=.git
+autocmd QuickfixCmdPost vimgrep copen
+autocmd QuickfixCmdPost grep copen
+nnoremap <expr> <Space>g ':vimgrep /\<' . expand('<cword>') . '\>/j **/*'
+nnoremap <expr> <Space>G ':sil grep! ' . expand('<cword>') . ' *'
+
 " 改行コードの自動認識
 set fileformats=unix,dos,mac
 
@@ -267,7 +278,7 @@ let g:quickrun_config._={ 'runner':'vimproc',
 \ }
 
 " quickrunの実行を \r から r に変更
-silent! nmap <unique>q <Plug>(quickrun)
+silent! nmap <unique>_ <Plug>(quickrun)
 
 " quickrun.vim が実行していない場合には <C-c> を呼び出す
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>""
@@ -289,6 +300,10 @@ NeoBundleLazy 'OmniSharp/omnisharp-vim', {
 NeoBundleLazy 'OrangeT/vim-csharp', {'autoload': {'filetipes': ['cs', 'csi', 'csx']}}
 
 NeoBundle 'tpope/vim-dispatch'
+
+" React
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
 
 " end plugins
 call neobundle#end()
