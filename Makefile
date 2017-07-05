@@ -6,6 +6,7 @@ help:
 	cat Makefile
 
 zsh: $(foreach f, $(filter .zshrc%, $(DOT_FILES)), link-dot-file-$(f))
+	sh -c "$$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 scr: $(foreach f, $(filter .screenrc%, $(DOT_FILES)), link-dot-file-$(f))
 
