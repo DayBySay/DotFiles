@@ -23,10 +23,10 @@ setup-git: git-prompt.sh git-completion.bash
 	cat .bashrc.base
 
 git-prompt.sh:
-	wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+	curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > $@
 	
 git-completion.bash:
-	wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+	curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > $@
 
 brew:
 	ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
