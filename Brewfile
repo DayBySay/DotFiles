@@ -1,16 +1,75 @@
-tap 'caskroom/cask'
-tap 'homebrew/brewdler'
-tap 'homebrew/bundle'
-brew 'libyaml'
-brew 'openssl'
-brew 'ansible'
-brew 'gdbm'
-brew 'heroku-toolbelt'
-brew 'lua'
-brew 'node'
-brew 'xz'
-brew 'readline'
-brew 'sqlite'
-brew 'python3'
-brew 'vim', args: ['override-system-vi', 'with-lua', 'with-python3']
-brew 'wget'
+tap "caskroom/cask"
+tap "homebrew/brewdler"
+tap "homebrew/bundle"
+tap "homebrew/core"
+tap "homebrew/dupes"
+brew "libyaml"
+brew "ansible"
+brew "ant"
+brew "apktool"
+brew "autoconf"
+brew "automake"
+brew "awscli"
+brew "ghc"
+brew "cabal-install"
+brew "carthage"
+brew "clang-format"
+brew "curl"
+brew "jpeg"
+brew "wxmac"
+brew "erlang"
+brew "lame"
+brew "x264"
+brew "xvid"
+brew "ffmpeg"
+brew "gdbm"
+brew "ghq"
+brew "gibo"
+brew "glide"
+brew "heroku"
+brew "hiredis"
+brew "http-parser"
+brew "imagemagick"
+brew "oniguruma"
+brew "jq"
+brew "lcov"
+brew "libevent"
+brew "libiconv"
+brew "libxml2"
+brew "libxslt"
+brew "lua"
+brew "mas"
+brew "maven"
+brew "mono"
+brew "nginx"
+brew "nkf"
+brew "pcre2"
+brew "peco"
+brew "readline"
+brew "sqlite"
+brew "python3"
+brew "ruby-build"
+brew "rbenv"
+brew "reattach-to-user-namespace"
+brew "redis"
+brew "rename"
+brew "rust"
+brew "swiftformat"
+brew "tmux"
+brew "tree"
+brew "unixodbc"
+brew "vim", args: ["with-lua"]
+brew "watchman"
+brew "wget"
+brew "yarn"
+mas "Alfred", id: 405843582
+mas "Evernote", id: 406056744
+mas "FreeRAMBooster", id: 498073485
+mas "GIPHY CAPTURE", id: 668208984
+mas "Janetter", id: 478844335
+mas "Keynote", id: 409183694
+mas "LINE", id: 539883307
+mas "Skitch", id: 425955336
+mas "Slack", id: 803453959
+mas "Twitter", id: 409789998
+mas "Xcode", id: 497799835
