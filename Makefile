@@ -30,9 +30,8 @@ git-completion.bash:
 
 brew:
 	ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-	brew tap caskroom/cask
-	brew install caskroom/cask/brew-cask
-	brew tap Homebrew/brewdler
+	brew cask
+	brew bundle
 
 .PHONY: clean
 clean: $(foreach f, $(DOT_FILES), unlink-dot-file-$(f))
