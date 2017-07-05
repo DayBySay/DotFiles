@@ -7,6 +7,7 @@ help:
 
 zsh: $(foreach f, $(filter .zshrc%, $(DOT_FILES)), link-dot-file-$(f))
 	sh -c "$$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	touch $(HOME)/zshrc_local
 
 scr: $(foreach f, $(filter .screenrc%, $(DOT_FILES)), link-dot-file-$(f))
 
