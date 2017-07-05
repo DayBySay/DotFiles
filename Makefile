@@ -1,6 +1,6 @@
 DOT_FILES = .screenrc .vimrc .gitconfig .gitignore_global .tmux.conf .zshrc keyremap.xml
 
-all: scr git vim zsh brew
+all: scr git vim zsh brew tmx
 
 help:
 	cat Makefile
