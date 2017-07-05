@@ -1,6 +1,6 @@
 DOT_FILES = .screenrc .vimrc .gitconfig .gitignore_global .tmux.conf .zshrc keyremap.xml
 
-all: scr git vim zsh
+all: scr git vim zsh brew
 
 help:
 	cat Makefile
@@ -16,6 +16,10 @@ tmx: $(foreach f, $(filter .tmux.conf%, $(DOT_FILES)), link-dot-file-$(f))
 vim: $(foreach f, $(filter .vim%, $(DOT_FILES)), link-dot-file-$(f))
 	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
+brew:
+	ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+	brew bundle
+
 keyremap: link-keyremap
 
 git: $(foreach f, $(filter .git%, $(DOT_FILES)), link-dot-file-$(f)) setup-git
@@ -29,10 +33,6 @@ git-prompt.sh:
 	
 git-completion.bash:
 	curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > $@
-
-brew:
-	ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-	brew bundle
 
 .PHONY: clean
 clean: $(foreach f, $(DOT_FILES), unlink-dot-file-$(f))
