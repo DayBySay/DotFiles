@@ -13,7 +13,7 @@ export GREP_OPTIONS='--color=auto'
 stty -ixon -ixoff
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/t-sei/.oh-my-zsh
+export ZSH=/Users/takayuki.sei/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -22,7 +22,6 @@ export ZSH=/Users/t-sei/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 export PATH=${HOME}/.rbenv/bin:${PATH} && \
-eval "$(rbenv init -)"
 
 plugins=(git)
 
@@ -55,12 +54,12 @@ function peco-ghq-cd() {
 zle -N peco-ghq-cd
 bindkey '^g' peco-ghq-cd
 
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-export GOENV_ROOT="$HOME/.goenv"
+# export GOENV_ROOT="$HOME/.goenv"
+# export PATH="$GOENV_ROOT/bin:$PATH"
+# export GOENV_ROOT="$HOME/.goenv"
+# eval "$(goenv init -)"
 export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
 
 shellname=$(basename $SHELL)
