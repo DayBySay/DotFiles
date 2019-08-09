@@ -68,5 +68,5 @@ export PATH="$HOME/google-cloud-sdk/platform/google_appengine:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 
-[ -f $HOME/.zshrc_local ] && . $HOME/.zshrc_local
+[ -f $HOME/.zshrc.local ] && . $HOME/.zshrc.local
 

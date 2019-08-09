@@ -12,6 +12,7 @@ brew "ffmpeg"
 brew "node", link: false
 brew "firebase-cli"
 brew "flyway"
+brew "ghq"
 brew "gibo"
 brew "git-lfs"
 brew "jasper"
