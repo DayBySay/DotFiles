@@ -43,16 +43,18 @@ function peco-select-history() {
     zle redisplay
 }
 zle -N peco-select-history
-bindkey '^r' peco-select-history
+bindkey '^s' peco-select-history
 
-function peco-ghq-cd() {
-	local dir="$(ghq root)/$(ghq list | peco)"
-	if [ ! -z "$dir" ] ; then
-		cd "$dir"
-	fi
+function peco-src () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
 }
-zle -N peco-ghq-cd
-bindkey '^g' peco-ghq-cd
+zle -N peco-src
+bindkey '^g' peco-src
 
 # export GOENV_ROOT="$HOME/.goenv"
 # export PATH="$GOENV_ROOT/bin:$PATH"
@@ -63,3 +65,13 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$GOENV_ROOT/bin:$PATH"
 
 shellname=$(basename $SHELL)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/takayuki.sei/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/takayuki.sei/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/takayuki.sei/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/takayuki.sei/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH="$HOME/google-cloud-sdk/platform/google_appengine:$PATH"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
