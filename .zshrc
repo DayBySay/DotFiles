@@ -1,5 +1,3 @@
-[ -f $HOME/.zshrc_local ] && . $HOME/.zshrc_local
-
 alias ll="ls -la"
 alias diff="diff -u"
 alias vi=vim
@@ -43,7 +41,7 @@ function peco-select-history() {
     zle redisplay
 }
 zle -N peco-select-history
-bindkey '^s' peco-select-history
+bindkey '^r' peco-select-history
 
 function peco-src () {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
@@ -66,12 +64,9 @@ export PATH="$GOENV_ROOT/bin:$PATH"
 
 shellname=$(basename $SHELL)
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/takayuki.sei/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/takayuki.sei/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/takayuki.sei/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/takayuki.sei/google-cloud-sdk/completion.zsh.inc'; fi
-
 export PATH="$HOME/google-cloud-sdk/platform/google_appengine:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
+
+[ -f $HOME/.zshrc_local ] && . $HOME/.zshrc_local
+
