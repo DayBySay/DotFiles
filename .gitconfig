@@ -1,6 +1,6 @@
 [user]
     name = Takayuki Sei
-    email = takayuki_sei@voyagegroup.com
+    email = takayuki.sei@gree.net
 [color]
     # colorの設定(以下のコマンドは自動で色つける)
     status = auto
@@ -58,3 +58,8 @@
     insteadOf = https://github.com/
 [ghq]
     root = ~/go/src
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
