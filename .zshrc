@@ -54,10 +54,6 @@ function peco-src () {
 zle -N peco-src
 bindkey '^g' peco-src
 
-# export GOENV_ROOT="$HOME/.goenv"
-# export PATH="$GOENV_ROOT/bin:$PATH"
-# export GOENV_ROOT="$HOME/.goenv"
-# eval "$(goenv init -)"
 export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$GOENV_ROOT/bin:$PATH"
