@@ -68,3 +68,42 @@ endif
 set completeopt=menuone,preview
 
 filetype plugin indent on
+
+" vim-plug
+call plug#begin()
+" On-demand loading
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-goimports'
+Plug 'ctrlpvim/ctrlp.vim'
+call plug#end()
+
+" NERDTree
+nnoremap <C-e> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" asyncomplete
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+" vim-lsp
+" if executable('gopls')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'gopls',
+"         \ 'cmd': {server_info->['gopls', '-remote=auto']},
+"         \ 'allowlist': ['go', 'gomod', 'gohtmltmpl', 'gotexttmpl'],
+"         \ })
+"     autocmd BufWritePre *.go
+"         \ call execute('LspDocumentFormatSync') |
+"         \ call execute('LspCodeActionSync source.organizeImports')
+" endif
+
+" ctrlp
+let g:ctrlp_map = '<nop>'
+nnoremap <C-m> :CtrlP ~/<CR>
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_use_caching = 1
